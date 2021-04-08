@@ -31,7 +31,7 @@ pokemonList = [
   // Venusaur
   {
     pokedexNum: 3,
-    name:'Ivysaur',
+    name:'Venusaur',
     types: ['Grass', 'Poison'],
     height: 2,
     weight: 100,
@@ -42,7 +42,7 @@ pokemonList = [
    {
     pokedexNum: 4,
     name:'Charmander',
-    types: 'Fire',
+    types: ['Fire'],
     height: 0.6,
     weight: 8.5,
     biology: 'Lizard Pokemon',
@@ -52,7 +52,7 @@ pokemonList = [
   {
     pokedexNum: 5,
     name:'Charmeleon',
-    types: 'Fire',
+    types: ['Fire'],
     height: 1.1,
     weight: 19,
     biology: 'Lizard Pokemon',
@@ -72,7 +72,7 @@ pokemonList = [
   {
     pokedexNum: 7,
     name:'Squirtle',
-    types: 'Water',
+    types: ['Water'],
     height: 0.5,
     weight: 9,
     biology: 'Young Turtle Pokemon',
@@ -82,7 +82,7 @@ pokemonList = [
   {
     pokedexNum: 8,
     name:'Wartortle',
-    types: 'Water',
+    types: ['Water'],
     height: 1,
     weight: 22.5,
     biology: 'Turtle Pokemon',
@@ -92,10 +92,19 @@ pokemonList = [
   {
     pokedexNum: 9,
     name:'Blastoise',
-    types: 'Water',
+    types: ['Water'],
     height: 1.6,
     weight: 85.5,
     biology: 'Shell Pokemon',
     description: 'The jets of water it spouts from the rocket cannons on its shell can punch through thick steel.',
   },
 ];
+
+for (let i = 0; i < pokemonList.length; i++) {
+  // Add a note if the height is bigger than 1
+  if (pokemonList[i].height > 1) {
+  document.write(pokemonList[i].name + " " + "(height " + pokemonList[i].height + ")" + " Wow that's big!" + "<br />");
+} else {
+  document.write(pokemonList[i].name + " " + "(height " + pokemonList[i].height + ")" + "<br />");
+}
+  }
