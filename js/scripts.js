@@ -1,4 +1,4 @@
-let pokemonList = []
+let pokemonList = [];
 
 pokemonList = [
   // Bulbasaur
@@ -98,4 +98,4 @@ pokemonList = [
     biology: 'Shell Pokemon',
     description: 'The jets of water it spouts from the rocket cannons on its shell can punch through thick steel.',
   },
-]
+];
