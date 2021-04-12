@@ -100,7 +100,9 @@ var pokemonRepo = (function () {
 ];
   
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (typeof pokemon === 'object') {
+      pokemonList.push(pokemon);
+    } 
   }
 
   function getAll() {
