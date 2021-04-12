@@ -19,14 +19,14 @@ var pokemonRepo = (function () {
   },
   // Ivysaur
   {
-  pokedexNum: 2,
-  name:'Ivysaur',
-  types: ['Grass', 'Poison'],
-  height: 1,
-  weight: 13,
-  biology: 'Seed Pokemon',
-  description: 'When the bud on its back starts swelling, a sweet aroma wafts to indicate the flowers coming bloom.',
-},
+    pokedexNum: 2,
+    name:'Ivysaur',
+    types: ['Grass', 'Poison'],
+    height: 1,
+    weight: 13,
+    biology: 'Seed Pokemon',
+    description: 'When the bud on its back starts swelling, a sweet aroma wafts to indicate the flowers coming bloom.',
+  },
   // Venusaur
   {
     pokedexNum: 3,
@@ -118,9 +118,13 @@ var pokemonRepo = (function () {
 
 console.log(pokemonRepo.getAll());
 
-let displayPokemonList = pokemonRepo.getAll();
+pokemonRepo.getAll().forEach(function (pokemon) {
+  let pokemonList = document.querySelector('.pokemon-list');
+  let listPokemon = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = pokemon.name;
+  button.classList.add('list-button');
+  listPokemon.appendChild(button);
+  pokemonList.appendChild(listPokemon);
 
-function myPokeList(pokemon) {
-  document.write(pokemon.name + " " + pokemon.types + " (Height " + pokemon.height + ") <br />");
-}
-displayPokemonList.forEach(myPokeList);
+})
