@@ -120,7 +120,9 @@ var pokemonRepo = (function () {
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     // Event Listener for button
-    button.addEventListener('click', showDetails(pokemon));
+    button.addEventListener('click', function () {
+      showDetails(pokemon.name)
+    });
   };
 
     // Currently logs the pokemonList array to the console
