@@ -1,5 +1,30 @@
-.list-button {
-  min-width:500px;
+button.list-button {
+  min-width:200px;
+  height:50px;
   border: 1px solid #000;
-  background-color: red;
+}
+.pokemon-list {
+  padding:0 0;
+  margin-left: 0px;
+  margin-right:15px;
+}
+
+.pokemon-list li {
+  list-style: none;
+}
+
+#form-div {
+  position:fixed;
+  margin: 0 auto;
+  width:500px;
+  height: 500px;
+  padding: 200px 200px;
+  background-color:#cecece;
+  border: 2px solid black;
+  z-index:9999;
+  top:500px;
+}
+
+.hidden {
+  display:none;
 }

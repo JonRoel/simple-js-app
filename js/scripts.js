@@ -99,17 +99,38 @@ var pokemonRepo = (function () {
   },
 ];
   
+  // checks for object and allows 
   function add(pokemon) {
     if (typeof pokemon === 'object') {
       pokemonList.push(pokemon);
     } 
-  }
+  };
 
+  //Gets the entire list from pokemonList Array
   function getAll() {
     return pokemonList;
-  }
+  };
+
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listPokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('list-button');
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+    // Event Listener for button
+    button.addEventListener('click', showDetails(pokemon));
+  };
+
+    // Currently logs the pokemonList array to the console
+    function showDetails(pokemon) {
+      console.log(pokemon);
+    };
 
   return {
+    showDetails: showDetails,
+    addListItem: addListItem,
     add: add,
     getAll: getAll
   };
@@ -119,12 +140,6 @@ var pokemonRepo = (function () {
 console.log(pokemonRepo.getAll());
 
 pokemonRepo.getAll().forEach(function (pokemon) {
-  let pokemonList = document.querySelector('.pokemon-list');
-  let listPokemon = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('list-button');
-  listPokemon.appendChild(button);
-  pokemonList.appendChild(listPokemon);
-
+  pokemonRepo.addListItem(pokemon);
 })
+
