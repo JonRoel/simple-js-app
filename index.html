@@ -12,14 +12,15 @@
   <body>
     <header></header>
     <main>
-      <input class="search" placeholder="Search (coming soon)" />
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by name">
       <div>
         <h3>Pokedex</h3>
-        <ul class="pokemon-list"></ul>
+        <ul class="pokemon-list" id="pokemon-list"></ul>
       </div>
     
   </main>
-    <footer></footer>
+ <footer></footer>
+    <script src="js/search.js"></script>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script src="js/scripts.js"></script>

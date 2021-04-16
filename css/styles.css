@@ -9,6 +9,7 @@ button.list-button {
   min-width:200px;
   height:50px;
   border: 1px solid #000;
+  display:block;
 }
 .pokemon-list {
   padding:0 0;
@@ -18,6 +19,7 @@ button.list-button {
 
 .pokemon-list li {
   list-style: none;
+  display:block;
 }
 
 #form-div {

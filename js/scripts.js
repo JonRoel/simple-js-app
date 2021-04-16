@@ -24,7 +24,7 @@ var pokemonRepo = (function () {
     let pokemonList = document.querySelector('.pokemon-list');
     let listPokemon = document.createElement('li');
     let button = document.createElement('button');
-    button.innerText = pokemon.name;
+    button.innerHTML = '<img src=${pokemon.imageUrl}">' + " " +  pokemon.name;
     button.classList.add('list-button');
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
@@ -43,7 +43,8 @@ var pokemonRepo = (function () {
         json.results.forEach(function (item) {
           let pokemon = {
             name: item.name,
-            detailsUrl: item.url
+            detailsUrl: item.url,
+            imageUrl: item.imageUrl,
           };
           add(pokemon);
           //console.log(pokemon);
@@ -89,6 +90,7 @@ var pokemonRepo = (function () {
     showDetails: showDetails,
   };
 
+
 })();
 
 console.log(pokemonRepo.getAll());
@@ -98,3 +100,5 @@ pokemonRepo.loadList().then(function() {
     pokemonRepo.addListItem(pokemon);
   })
 });
+
+
