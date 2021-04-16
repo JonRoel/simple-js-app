@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Pokedex</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Simple JS App</title>
@@ -10,6 +12,7 @@
   <body>
     <header></header>
     <main>
+      <input class="search" placeholder="Search (coming soon)" />
       <div>
         <h3>Pokedex</h3>
         <ul class="pokemon-list"></ul>
@@ -17,6 +20,8 @@
     
   </main>
     <footer></footer>
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
