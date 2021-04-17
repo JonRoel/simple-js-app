@@ -24,7 +24,7 @@ var pokemonRepo = (function () {
     let pokemonList = document.querySelector('.pokemon-list');
     let listPokemon = document.createElement('li');
     let button = document.createElement('button');
-    button.innerHTML = '<img src=${pokemon.imageUrl}">' + " " +  pokemon.name;
+    button.innerHTML = `<img width="44px" class="sprite" style="float:left;" src="${pokemon.imageUrl}"> <p>${pokemon.name}</p>`; 
     button.classList.add('list-button');
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
@@ -35,6 +35,15 @@ var pokemonRepo = (function () {
   }
 
     // Load API List with Name
+    function getAllIndexes(arr, val) {
+      var indexes = [], i = -1;
+      while ((i = arr.indexOf(val, i+1)) != -1){
+          indexes.push(i);
+      }
+      return indexes;
+  }
+  
+  var indexes = getAllIndexes(pokemonList);
 
     function loadList() {
       return fetch(apiUrl).then(function (response) {
@@ -44,10 +53,10 @@ var pokemonRepo = (function () {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url,
-            imageUrl: item.imageUrl,
+            imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexes++ +1}.png`,
           };
           add(pokemon);
-          //console.log(pokemon);
+          //console.log.indexOf(pokemon);
         });
       }).catch(function (e) {
         console.error(e);
@@ -58,19 +67,16 @@ var pokemonRepo = (function () {
 
     function loadDetails(item) {
       let url = item.detailsUrl;
-      return fetch(url).then(function (response) {
+        return fetch(url).then(function (response) {
         return response.json();
-      }).then(function (details) {
-        // Now we add the details to the item
-        item.imageUrl = details.sprites.front_default;
-        item.height = details.height;
-        item.types = details.types;
-        item.weight = details.weight;
-        item.id = details.id;
-      }).catch(function (e) {
+          }).then(function (details) {
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types;
+        }).catch(function (e) {
         console.error(e);
-      });
-    }
+        });
+      }
 
     // logs the pokemonList array to the console
 
@@ -93,11 +99,11 @@ var pokemonRepo = (function () {
 
 })();
 
-console.log(pokemonRepo.getAll());
+//console.log(pokemonRepo.getAll());
 
 pokemonRepo.loadList().then(function() {
-  pokemonRepo.getAll().forEach(function(pokemon) {
-    pokemonRepo.addListItem(pokemon);
+  pokemonRepo.getAll().forEach(function(pokemon, index) {
+    pokemonRepo.addListItem(pokemon, index);
   })
 });
 

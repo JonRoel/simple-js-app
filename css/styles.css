@@ -10,6 +10,7 @@ button.list-button {
   height:50px;
   border: 1px solid #000;
   display:block;
+  text-transform: capitalize;
 }
 .pokemon-list {
   padding:0 0;
@@ -21,20 +22,3 @@ button.list-button {
   list-style: none;
   display:block;
 }
-
-#form-div {
-  position:fixed;
-  margin: 0 auto;
-  width:500px;
-  height: 500px;
-  padding: 200px 200px;
-  background-color:#cecece;
-  border: 2px solid black;
-  z-index:9999;
-  top:500px;
-}
-
-.hidden {
-  display:none;
-}
-
