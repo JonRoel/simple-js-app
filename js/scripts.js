@@ -35,6 +35,7 @@ var pokemonRepo = (function () {
   }
 
     // Load API List with Name
+    // Used to get index to allow loading of sprites
     function getAllIndexes(arr, val) {
       var indexes = [], i = -1;
       while ((i = arr.indexOf(val, i+1)) != -1){
