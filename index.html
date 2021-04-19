@@ -12,14 +12,27 @@
   <body>
     <header></header>
     <main>
+      <div class="searchbar">
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by name">
+      </div>
       <div>
         <h3>Pokedex</h3>
         <ul class="pokemon-list" id="pokemon-list"></ul>
       </div>
+      <!-- Modal Start-->
+      <button id='show-modal'>
+        Show modal</button>
+      
+      <button id='show-dialog'>
+        Show dialog
+      </button>
+      
+      <div id='modal-container'></div>
+      <!-- Modal End -->
     
   </main>
  <footer></footer>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
     <script src="js/search.js"></script>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
