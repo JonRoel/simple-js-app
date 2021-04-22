@@ -3,7 +3,7 @@ var pokemonRepo = (function () {
   
  // Loads API url
   
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=248';
   
   // checks for object and allows addiing to array function
   function add(pokemon) {
@@ -36,25 +36,25 @@ var pokemonRepo = (function () {
 
     // Load API List with Name
     // Used to get index to allow loading of sprites
-    function getAllIndexes(arr, val) {
-      var indexes = [], i = -1;
-      while ((i = arr.indexOf(val, i+1)) != -1){
-          indexes.push(i);
-      }
-      return indexes;
-  }
+  //   function getAllIndexes(arr, val) {
+  //     var indexes = [], i = -1;
+  //     while ((i = arr.indexOf(val, i+1)) != -1){
+  //         indexes.push(i);
+  //     }
+  //     return indexes;
+  // }
   
-  var indexes = getAllIndexes(pokemonList);
+  // var indexes = getAllIndexes(pokemonList);
 
     function loadList() {
       return fetch(apiUrl).then(function (response) {
         return response.json();
       }).then(function (json) {
-        json.results.forEach(function (item) {
+        json.results.forEach(function (item, index) {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url,
-            imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${indexes++ +1}.png`,
+            imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`,
           };
           add(pokemon);
           //console.log.indexOf(pokemon);
@@ -193,8 +193,8 @@ modalContainer.addEventListener('click', (e) => {
 //console.log(pokemonRepo.getAll());
 
 pokemonRepo.loadList().then(function() {
-  pokemonRepo.getAll().forEach(function(pokemon, index) {
-    pokemonRepo.addListItem(pokemon, index);
+  pokemonRepo.getAll().forEach(function(pokemon) {
+    pokemonRepo.addListItem(pokemon);
   })
 });
 
