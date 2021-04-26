@@ -219,17 +219,6 @@ h1 {
 /* Media Styles */
 
 @media all and (max-width: 500px) {
-  .pokemon-list {
-<<<<<<< Updated upstream
-
-  }
-
-=======
-    
-  }
-
-
->>>>>>> Stashed changes
   .list-wrapper {
     width:100%;
     text-align:center; 
@@ -270,9 +259,6 @@ h1 {
 }
 
 @media all and (min-width: 800px) and (max-width: 1024px){ /* IPAD Pro Styling */
-
-  .pokemon-list {
-  }
 
   .list-wrapper {
     border:1px solid #cecece;
