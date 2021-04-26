@@ -220,9 +220,16 @@ h1 {
 
 @media all and (max-width: 500px) {
   .pokemon-list {
+<<<<<<< Updated upstream
 
   }
 
+=======
+    
+  }
+
+
+>>>>>>> Stashed changes
   .list-wrapper {
     width:100%;
     text-align:center; 
