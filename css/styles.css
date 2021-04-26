@@ -5,14 +5,23 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+p {
+  margin-top: 10px;
+}
 
 h1 {
   font-family: 'Press Start 2P', cursive;
   color:#fff;
 }
-button.list-button {
+
+.list-group-item {
+  padding:0 0;
+  border:none;
+}
+
+.btn-list {
   min-width:220px;
-  height:50px;
+  height:54px;
   border: 1px solid #8e8127;
   display:block;
   text-transform: capitalize;
@@ -29,6 +38,7 @@ button.list-button {
   margin:-60px auto 0 auto;
   background-color:#fff;
   width:67%;
+  max-width:900px;
   padding-top:40px;
   padding-bottom: 40px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -36,19 +46,12 @@ button.list-button {
 
 .pokemon-list {
   padding:0 0;
-  margin-left: 0px;
-  margin-right:15px;
-  display:grid;
-  -ms-grid-columns: 1 fr 20px 1fr 20px 1fr;
-  grid-template-columns:1fr 1fr 1fr;
-  grid-gap:25px;
   margin: 0 auto;
-  width:85%;
+  width:90%;
 }
 
-.pokemon-list li {
-  list-style: none;
-  display:block;
+.col {
+  margin-bottom:20px;
 }
 
 /* Search Area and Field */
@@ -61,14 +64,14 @@ button.list-button {
   padding:25px 0px;
 }
 
-#myInput {
-  margin-top:10px;
-  padding-left: 7px;
-  width:220px;
-  height:30px;
+.form-control {
+  margin:10px auto;;
+  height:32px;
+  max-width:250px;
   border:1px solid #cecece;
   border-radius: 15px;
-  box-shadow: rgb(0, 0, 0, .3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline:none;
 }
 
 /* Modal Styles Start */
@@ -101,14 +104,11 @@ button.list-button {
 
 .modal {
   margin: auto;
-  display: inline-block;
   box-sizing: border-box;
-  background: rgb(255, 255, 255);
+  background: rgb(255, 255, 255 .2);
   padding: 25px;
   width: 100%;
-  max-width: 700px;
   text-align: left;
-  border: 2px solid #14171a;
   border-radius:30px;
   text-transform: capitalize;
   text-align: center;
@@ -120,7 +120,7 @@ button.list-button {
 .type {
   padding: 1px 0 15px 0;
   margin:0 auto;
-  width: 50%;
+  text-align: center;
 }
 
 .fire {
@@ -220,18 +220,15 @@ button.list-button {
 
 @media all and (max-width: 500px) {
   .pokemon-list {
-    -ms-grid-columns: 1 fr;
-    grid-template-columns:1fr;
-    grid-gap:15px;
-    width:90%;
+
   }
 
   .list-wrapper {
     width:100%;
-    text-align:center;
+    text-align:center; 
   }
 
-  button.list-button {
+  .btn-list{
     height: 60px;
     border: 1px solid #8e8127;
     font-size: 20px;
@@ -244,28 +241,19 @@ button.list-button {
 @media all and (min-width: 500px) and (max-width: 800px){
   .pokemon-list {
     padding:0 0;
-    margin-left: 0px;
-    margin-right:15px;
-    display:grid;
-    -ms-grid-columns: 1 fr 5px 1fr;
-    grid-template-columns:1fr 1fr;
-    grid-gap:25px;
-    margin: 0 auto;
-    width:90%;
   }
 
   .list-wrapper {
     border:1px solid #cecece;
     margin:-60px auto 0 auto;
     background-color:#fff;
-    width:85%;
+    width:90%;
     padding-top:40px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  button.list-button {
+  .btn-list{
     height: 60px;
-    border: 1px solid #8e8127;
     font-size: 20px;
     width: 250px;
     line-height: 0.1em;
@@ -277,15 +265,6 @@ button.list-button {
 @media all and (min-width: 800px) and (max-width: 1024px){ /* IPAD Pro Styling */
 
   .pokemon-list {
-    padding:0 0;
-    margin-left: 0px;
-    margin-right:15px;
-    display:grid;
-    -ms-grid-columns: 1 fr 20px 1fr 20px 1fr;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-gap:25px;
-    margin: 0 auto;
-    width:90%;
   }
 
   .list-wrapper {
@@ -297,9 +276,8 @@ button.list-button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  button.list-button {
+  .btn-list {
     height: 60px;
-    border: 1px solid #8e8127;
     font-size: 20px;
     width: 250px;
     line-height: 0.1em;
