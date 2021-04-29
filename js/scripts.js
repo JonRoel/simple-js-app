@@ -30,6 +30,7 @@ var pokemonRepo = (function () {
       showDetails(pokemon)
     });
   }
+
     function loadList() {
       return fetch(apiUrl).then(function (response) {
         return response.json();
@@ -46,6 +47,7 @@ var pokemonRepo = (function () {
         console.error(e);
       })
     }
+
     // Load Details of each
     function loadDetails(item) {
       let url = item.detailsUrl;
@@ -63,6 +65,7 @@ var pokemonRepo = (function () {
         console.error(e);
         });
       }
+
     // Show Details
     function showDetails(pokemon) {
       pokemonRepo.loadDetails(pokemon).then(function () {
@@ -71,29 +74,37 @@ var pokemonRepo = (function () {
       });
     }
     function showModal(pokemon) {
+
       // Define each model element
       let modalHeader = $('.modal-header');
       let modalTitle = $('.modal-title');
       let modalBody = $('.modal-body');
       let modalFooter = $('.modal-footer');
+
       // Empty modal content
       modalTitle.empty();
       modalBody.empty();
       modalHeader.empty();
+
       //Get the pokemon name
       let nameElement = $('<h2' + pokemon.name + '</h2>');
       let modal = document.createElement('div');
       modal.classList.add('modal');
+
       //get the Image
       let imageElementFront = $('<img class="pokemon-image">');
       imageElementFront.attr('src', pokemon.imageUrlFront);
+
       // get image back
       let imageElementBack = $('<img class="pokemon-image">');
       imageElementBack.attr('src', pokemon.imageUrlBack);
+
       //get the height of the pokemon
       let heightElement = $('<p> Height: ' + pokemon.height + '</p>');
+
       //get the weight of the pokemon
       let weightElement = $('<p> Weight: ' + pokemon.weight + '</p>');
+
       // get the Type of each pokemon, these are objects with the arrays
       let typesDiv = document.createElement('div');
         typesDiv.classList.add('type-wrapper');
@@ -108,6 +119,7 @@ var pokemonRepo = (function () {
         typesElement.appendChild(typesText);
         typesDiv.appendChild(typesElement);
       });
+
       // Append Modal Elements
       modalTitle.append(nameElement);
       modalBody.append(imageElementFront);
