@@ -2,8 +2,9 @@ var pokemonRepo = (function () {
  var pokemonList = [];
  // Loads API url
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=248';
-  // checks for object and allows addiing to array function
+  // Adding a pokemon to pokemon list
   function add(pokemon) {
+    // Validate pokemon
     if (typeof pokemon === 'object') {
       pokemonList.push(pokemon);
     }
@@ -30,7 +31,7 @@ var pokemonRepo = (function () {
       showDetails(pokemon)
     });
   }
-
+  // Loads Pokemon List
     function loadList() {
       return fetch(apiUrl).then(function (response) {
         return response.json();
@@ -55,6 +56,7 @@ var pokemonRepo = (function () {
         return response.json();
           })
           .then(function (details) {
+          // adding item's properties
           item.imageUrlFront = details.sprites.front_default;
           item.imageUrlBack = details.sprites.back_default;
           item.height = details.height;
